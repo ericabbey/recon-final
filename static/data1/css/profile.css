@@ -1,0 +1,99 @@
+.body{
+    min-height: 700px;;
+}
+.inner{
+    margin: 40px 5px 0 5px;
+}
+.profile_img{
+    width: 70px;
+    display: inline-block;
+    margin: 0 20px 0 0 ;
+    position: relative;
+    top: -10px;
+}
+.profile_img>img{
+    width: 100%;
+}
+.profile_name{
+    display: inline;
+    font-size: 50px;
+    line-height: 20px;
+    margin: 0 !important;
+}
+.empty{
+    color: darkgrey;
+    font-size: 30px;
+    text-align: center;
+    margin: 50px 0 0 0;
+}
+.blog-btn-cont{
+    margin: 50px 0 0 0;
+}
+.blog-btn{
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 17px;
+}
+.blog-btn:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+.crt_link:hover{
+    text-decoration: none;
+}
+.list-cont{
+    border: 1px solid #dddddd;
+    width: 700px;
+    margin: 20px auto;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.list-title{
+    border-bottom: 1px solid #dfdfdf;
+    margin: 0 10px;
+}
+.list-title>p{
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    color: #7a7a7a;
+}
+.list-middle{
+    clear: both;
+}
+.list-left{
+    width: 200px;
+    float: left;
+}
+.list-left>img{
+    width: 100% ;
+}
+.list-right{
+    width: 500px;
+    margin: 0 0 0 200px;
+}
+.list-right>p{
+    padding: 10px;
+    font-size: 17px;
+}
+.list-button{
+    clear: both;
+    border-top: 1px solid #dfdfdf;
+    margin: 0 10px;
+    padding: 2px;
+}
+.button-info{
+    width: 70px;
+    text-align: center;
+    margin: 0 3px;
+    padding: 3px;
+    font-size: 17px;
+    display: inline-block;
+    float: right;
+}
+.button-info:hover{
+    cursor: pointer;
+    text-decoration: none;
+}

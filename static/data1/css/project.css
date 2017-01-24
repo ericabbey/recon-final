@@ -1,0 +1,143 @@
+
+body{
+	background-color: ghostwhite;
+}
+.header-img{
+	background-image: url(../img/1280.jpg);
+	background-size: cover;
+	height: 270px;
+	margin: 0 0 50px 0;
+}
+.header-img h1{
+	margin: 0 auto;
+	padding: 10px 0 10px 0;
+	text-align: center;
+	color: ghostwhite;
+	font-style: normal;
+	position: relative;
+	top: 110px;
+}
+.calender-body{
+
+}
+table{
+	margin: 20px 0 20px 0;
+	border: 1px solid #d1d1d1;
+}
+tr>th{
+	background-color: lawngreen;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	font-size: 17px;
+	color: #4b4b4b;
+	border: 1px solid #d1d1d1;
+}
+tr>td{
+	width: 150px;
+	height: 100px;
+	text-align: right;
+	font-size: 17px;
+	border: 1px solid #d1d1d1;
+	padding: 10px;
+}
+.event-day{
+	background-color: rgba(124, 252, 0, 0.28);
+	text-align: center;
+	border: 2px solid lawngreen;
+}
+.event-day a{
+	text-decoration: none;
+	color: #000;
+}
+.national-day{
+	text-align: center;
+	background-color: rgba(26, 135, 213, 0.27);
+	border: 2px solid rgba(26, 167, 255, 0.87);
+}
+.both-day{
+	background-image: url("../images/bg.png");
+	background-size: cover;
+}
+.prev-month ,.next-month {
+	background-color: #e4e4eb;
+	font-size: 40px;
+	text-decoration: none;
+	margin: 50px 0 0 0;
+	height: 50px;
+	overflow: hidden;
+}
+.prev-month:hover,.next-month:hover{
+	text-decoration: none;
+}
+.prev-month b, .next-month b{
+	padding: 10px;
+}
+.month-name{
+	float: right;
+	width: 60%;
+}
+.month-name p {
+	font-size: 50px;
+}
+.table-responsive{
+	clear: both;
+}
+.content{
+	margin: 0 auto;
+	width: 90%;
+}
+.content>h1{
+	text-align: center;
+	margin: 10px 0 60px 0;
+}
+.detail-header{
+	margin: 0 auto;
+	text-align: center;
+}
+.detail-header-container{
+	margin: 0 auto;
+}
+.detail-content{
+}
+.detail-content h1{
+	text-align: center;
+}
+.detail-content h3{
+	display: inline-block;
+}
+.detail-content span{
+	font-size: 20px;
+}
+.event-img-container>img{
+	width: 100%;
+}
+.event-message{
+	font-size: 20px;
+}
+.event-venue{
+	width: 97%;
+	height: 400px;
+}
+.detail-maps{
+	border-radius: 3px;
+}
+.detail-maps span{
+	height: 80%;
+	font-size: 20px;
+	margin: 0 80px 0 0;
+	padding: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: lawngreen;
+	border-radius: 5px;
+}
+.detail-maps span:hover{
+	font-weight: bold;
+}
+.no-display{
+	display: none;
+}
+.display{
+	display: inline-block;
+}
