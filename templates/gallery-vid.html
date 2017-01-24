@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta %}{% endblock %}
+{% block title %} Reconcilers Int | Gallery {% endblock %}
+
+{% block blog_style1 %}<link rel="stylesheet"  href="{% static  'css/gallery.css' %}">{% endblock %}
+{% block header_name %}<h1>Gallery</h1>{% endblock %}
+{% block middle %}
+        <div class="row body-pic">
+            <div class="breadcrumbs">
+                <small>Gallery</small><i class="fa fa-angle-double-right"></i><small>Videos</small>
+            </div>
+            <div class="col-md-12 gal-header"><h1>Videos</h1></div>
+        </div>
+        <div class="big-cont-img">
+            <div class="player">
+                <video src="{% static 'img/Jamie Grace - Show Jesus .mp4' %}" controls poster=""></video>
+            </div>
+             <hr/>
+            <div class="gal-container">
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/drama1.png' %}" alt=""/><p class="source">some title i cant off any of now</p></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/1.jpg' %}" alt=""/></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/dance1.png' %}" alt=""/></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/2.jpg' %}" alt=""/></div>
+             </div>
+
+            <div class="gal-container">
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/drama1.png' %}" alt=""/></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/2.jpg' %}" alt=""/></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/dance1.png' %}" alt=""/></div>
+                <div class="gal-img-cont video"><i class="fa fa-play-circle-o"></i><img src="{% static 'img/1.jpg' %}" alt=""/></div>
+             </div>
+        </div>
+    <div class="option">
+        <p>Also check out <a href="{% url 'gallery' %}">Pictures</a> | <a href="{% url 'audios' %}">Audios</a></p>
+    </div>
+{%endblock%}0

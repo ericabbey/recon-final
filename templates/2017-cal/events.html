@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} RI |Blogs | {{ instance.title }}  {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/project.css' %}">{% endblock %}
+{% block blog_style1 %}{% endblock %}
+{% block header_name %}<h1>Up Coming Events</h1>{% endblock %}
+{% block middle %}
+        <div class="row content">
+            <div class="col-md-12 detail-header">
+                <div class="detail-header-container">
+                    <img src="{% static  'img/top-header.png' %}" alt="" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-content">
+                    <h1>Detail</h1>
+                    <div class="event-message"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cum, ducimus eius eligendi eos exercitationem explicabo inventore nesciunt nihil nisi numquam quam tempore voluptate. Adipisci cupiditate distinctio doloribus, ea, esse est ex obcaecati placeat porro quas quis sapiente soluta, sunt!</p></div>
+                    <h3>Time:</h3>  <span> 3:00</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-maps">
+                    <span class="no-display online">Google map</span><span class="offline">Plain map</span>
+                    <div class="plain-map offline">
+                        <img src="{% static  'img/map.jpg' %}" alt="" class="img-responsive"/>
+                    </div>
+                    <div class="google-map no-display online">
+                        <iframe src="http:\\www.map.google.com" frameborder="0" class="event-venue"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+   {% endblock %}

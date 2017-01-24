@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Blogs| Create {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/post_form.css' %}">{% endblock %}
+{% block header_name %}<h1>Create Blog</h1>{% endblock %}
+{% block middle %}
+	<div class="blog_form_container">
+		<form method="POST" action="" id="post_form" enctype="multipart/form-data">
+		{% csrf_token %}
+			
+			<div class="form_content">
+				<p class="form_title">
+					<label for="id_title"></label>
+					<input id="id_title"  maxlength="120" name="title" type="text" placeholder="Title:" value="{{ instance.title }}" required>
+				</p>
+				<p>
+					<label for="id_content"></label>
+					<textarea id="id_content" cols="40" name="content" rows="10" placeholder="Content:" required>{{ instance.content }}</textarea>
+				</p>
+				<div class="styles">
+					<div class="file-upload-wrapper">
+						<input name="image" type="file" id="id_image" class="file-upload-native" value="{{ instance.image.url }}" accept="image/*"/>
+						<label for="id_image" class="file-upload-text fa fa-picture-o" ></label>
+					</div>
+				</div>	
+			</div>
+			<input type="submit" value="Create Post" id="submit" required>
+		</form>	
+	</div>
+{% endblock %}

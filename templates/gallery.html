@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta %}{% endblock %}
+{% block title %} Reconcilers Int | Gallery {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/lightbox.css' %}">{% endblock %}
+{% block blog_style1 %}<link rel="stylesheet"  href="{% static  'css/gallery.css' %}">{% endblock %}
+{% block header_name %}<h1>Gallery</h1>{% endblock %}
+{% block middle %}
+        <div class="row body-pic">
+            <div class="breadcrumbs">
+                <small>Gallery</small><i class="fa fa-angle-double-right"></i><small>Pictures</small>
+            </div>
+            <div class="col-md-12 gal-header"><h1>Pictures</h1></div>
+        </div>
+        <div class="big-cont-img">
+            <div class="gal-container">
+                <div class="gal-img-cont landscape"><a href="{% static 'img/drama1.png' %}" rel="lightbox[row1]" title="Reconcilers Court"><img src="{% static 'img/drama1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/1.jpg' %}" rel="lightbox[row1]" title="Young and free 2016"><img src="{% static 'img/1.jpg' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/dance1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/dance1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont portrait"><a href="{% static 'img/2.jpg' %}" rel="lightbox[row1]" title="Grandma"><img src="{% static 'img/2.jpg' %}" alt=""/></a></div>
+             </div>
+            <div class="gal-container">
+                <div class="gal-img-cont landscape"><a href="{% static 'img/drama1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/drama1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/1.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/1.jpg' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/dance1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/dance1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont portrait"><a href="{% static 'img/2.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/2.jpg' %}" alt=""/></a></div>
+             </div>
+            <div class="gal-container">
+               <div class="gal-img-cont landscape"><a href="{% static 'img/drama1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/drama1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/1.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/1.jpg' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/dance1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/dance1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont portrait"><a href="{% static 'img/2.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/2.jpg' %}" alt=""/></a></div>
+             </div>
+            <div class="gal-container">
+                <div class="gal-img-cont landscape"><a href="{% static 'img/drama1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/drama1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/1.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/1.jpg' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/dance1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/dance1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont portrait"><a href="{% static 'img/2.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/2.jpg' %}" alt=""/></a></div>
+             </div>
+            <div class="gal-container">
+                <div class="gal-img-cont landscape"><a href="{% static 'img/drama1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/drama1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/1.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/1.jpg' %}" alt=""/></a></div>
+                <div class="gal-img-cont landscape"><a href="{% static 'img/dance1.png' %}" rel="lightbox[row1]"><img src="{% static 'img/dance1.png' %}" alt=""/></a></div>
+                <div class="gal-img-cont portrait"><a href="{% static 'img/2.jpg' %}" rel="lightbox[row1]"><img src="{% static 'img/2.jpg' %}" alt=""/></a></div>
+             </div>
+        </div>
+    <div class="option">
+        <p>Also check out <a href="{% url 'videos' %}">Videos</a> | <a href="{% url 'audios' %}">Audios</a></p>
+    </div>
+{%endblock%}

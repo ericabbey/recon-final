@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Reconcilers Int | Blogs {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/blogs.css' %}">{% endblock %}
+{% block blog_style1 %}<link rel="stylesheet"  href="{% static  'css/login.css' %}">{% endblock %}
+{% block middle %}
+		<div class="row body">
+			<div class="row">
+				<div class="col-md-12">
+                    <form method="GEt" action="" class="search-form">
+					    <input id="q" type='text' name="q" placeholder="search posts" value="{{ request.GET.q }}"/>
+{#					    <input id="submit" type="submit" value="Search" class="fa fa-search" />#}
+				    </form>
+                </div>
+			</div>
+        {% if obj_count >= 1 %}
+			{% for obj in object_list %}
+            <div class="col-md-4 col-sm-10 body-left">
+                <a href='{{ obj.get_absolute_url }}'>
+                    <div class="body-left-content">
+                        <div class="small-date small-position">
+                            <h1>{{ obj.timestamp|date:"d" }}</h1>
+                            <h4>{{ obj.timestamp|date:"M" }}</h4>
+
+                        </div>
+                        <div>
+                            <img src="{{ obj.image.url }}" alt="" class="responsive"/>
+                            <p class="id">{{ obj.id }}</p>
+                        </div>
+                        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a></h3>
+                        <p>{{ obj.content|truncatechars:180 }}</p>
+                        <div class="user">{{ current_user }}</div>
+
+                        <p class="blog-foot">
+                            {% if pro.title == "editor" %}
+                                <a href="/profile/"><span style="text-align:center;">{{ obj.user }}</span></a>
+                            {% else %}
+                            <span style="text-align:center;">{{ obj.user }}</span>
+                            {% endif %}
+                            <span class="foot_text">{{ obj.votes.count }}</span><span class="fa fa-thumbs-up foot_icon vote"></span>
+                            <span class="foot_text">{{ obj.comment_set.count }}</span><span class="fa fa-comment foot_icon vote"></span>
+                        </p>
+                    </div>
+                 </a>
+            </div>
+			{% endfor %}
+        {% else %}
+            <p class="no-blog">Your search query did not much anything</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

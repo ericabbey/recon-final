@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Reconcilers Int |{{ obj.username }} {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/profile.css' %}">{% endblock %}
+{% block blog_style1 %}{% endblock %}
+{% block header_name %}<h1>Editors Panel</h1>{% endblock %}
+{% block middle %}
+			<div class="row body">
+                <div class="inner">
+                    <div class="profile_img"><img src="{{ obj.profile_img.url }}" alt=""/></div>
+                    <p class="profile_name">Welcome {{ obj.user|capfirst }}</p>
+                </div>
+                <div class="post_list">
+                    {% if not posts  %}
+                        <p class="empty">You have not created any Blog</p>
+                    {% else %}
+                        {% for p in posts %}
+                            <div class="list-cont">
+                                <div class="list-title">
+                                    <p>{{ p.title|capfirst }}</p>
+                                </div>
+                                <div class="list-middle">
+                                    <div class="list-left">
+                                        <img src="{{ p.image.url }}" alt=""/>
+                                    </div>
+                                    <div class="list-right">
+                                        <p>{{ p.content|truncatechars:180 }}</p>
+                                    </div>
+                                </div>
+                                <div class="list-button">
+                                     <a href="/posts/delete/{{ p.id }}" class="crt_link"><div class="btn-info button-info">Delete</div></a>
+                                    <a href="/posts/edit/{{ p.id }}" class="crt_link"><div class="btn-info button-info">Edit</div></a>
+                                    <a href="/posts/{{ p.id }}" class="crt_link"><div class="btn-info button-info">View</div></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="blog-btn-cont">
+                    <a href="/posts/create" class="crt_link"><div class="blog-btn btn-info">Create Blog</div></a>
+                </div>
+			</div>
+		{% endblock %}

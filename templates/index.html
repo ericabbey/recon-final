@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Reconcilers Int | Home {% endblock %}
+{% block header_banner %}
+{% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'engine1/style.css' %}">{% endblock %}
+{% block middle %}
+			<div class="row header-row">
+				<div class="col-md-12 header">
+					<div id="wowslider-container1">
+						<div class="ws_images"><ul>
+								<li><img src="{% static 'data1/images/naturewallpaper.jpg' %}" alt="Nature-Wallpaper" title="Nature-Wallpaper" id="wows1_0"/></li>
+								<li><a href="http://wowslider.com/vi"><img src="{% static 'data1/images/openphotone.jpg' %}" alt="cssslider" title="openphotone" id="wows1_1"/></a></li>
+								<li><img src="{% static 'data1/images/nature.jpg' %}" alt="Nature" title="Nature" id="wows1_2"/></li>
+							</ul>
+						</div>
+						<div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">responsive slider</a> by WOWSlider.com v8.7</div>
+						<div class="ws_shadow"></div>
+					</div>
+
+					<div class="col-md-12 caption-container">
+						<div class="caption">
+							<small class="animated fadeInRightBig">Young & Free</small>
+							<h1 class="animated fadeInLeft">Knowing Christ </h1>
+							<p class="wow fadeInUpBig">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi molestias hic culpa labore, quis magnam neque quae quisquam accusamus nem.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 timer-container timer-1 ">
+					<p class="wow fadeInRight">&nbsp;&nbsp;Merry Christmas</p>
+					<small class="wow fadeInRight">December 25th,2016</small>
+				</div>
+				<div class="col-sm-6 timer-container timer-2">
+                    <table style="width: 100%">
+                        <tr class="time-handler-figure wow fadeInLeft">
+                            <th id="days">00</th>
+                            <th id="hours">00</th>
+                            <th id="minutes">00</th>
+                            <th id="seconds">00</th>
+                        </tr>
+                        <tr  class="time-handler-word wow fadeInLeft">
+                            <td>Days</td>
+                            <td>Hours</td>
+                            <td>Minutes</td>
+                            <td>Second</td>
+                        </tr>
+                    </table>
+                    <script src="{% static 'js/countdown.js' %}"></script>
+                    <script>
+                        countdown('05/26/2017 06:30:00 PM', ['days','hours', 'minutes', 'seconds'], function(){
+                           console.log('finished!!');
+                        });
+                    </script>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 events-container first">
+					<div class="container content">
+						<h6>Up coming</h6>
+						<h1>Events</h1>
+					</div>
+				</div>
+				<div class="col-sm-3 events-container">
+                    <div class="img-cont">
+                        <img src="{% static 'img/2.jpg' %}" class="second" alt=""/>
+                    </div>
+					<div class="img-content">
+						<p>September 2nd, 2016</p>
+						<p><b>Touching Lives</b></p>
+					</div>
+				</div>
+				<div class="col-sm-3 events-container">
+                    <div class="img-cont">
+                        <img src="{% static 'img/3.jpg' %}" class="second" alt=""/>
+                    </div>
+					<div class="img-content">
+						<p>September 2nd, 2016</p>
+						<p><b>Touching Lives</b></p>
+					</div>
+				</div>
+				<div class="col-sm-3 events-container">
+                    <div class="img-cont">
+                        <img src="{% static 'img/1.jpg' %}" class="second" alt=""/>
+                    </div>
+					<div class="img-content">
+						<p>September 2nd, 2016</p>
+						<p><b>Touching Lives</b></p>
+					</div>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col-md-12 about-container wow slideInLeft" data-wow-delay=".5s">
+					<h1>About Us</h1>
+					<div class="about">
+						<div class="col-md-4 about-container-in">
+							<img class="about-img img" src="{% static  'img/rock.JPG' %}" alt="">
+							<p>Our Community</p>
+							<p class="showpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos veritatis distinctio repellendus ipsa officiis eligendi, quia voluptatum et doloremque, quos itaque, dolorem libero. Repellendus explicabo exercitationem sequi ipsum, nisi sed cupiditate autem architecto odio? Nisi eligendi minima sed placeat eaque.</p>
+						</div>
+						<div class="col-md-4 about-container-in">
+							<img class="about-img img" src="{% static  'img/flower1.jpg' %}" alt="">
+							<p>Our Mission</p>
+							<p class="showpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos veritatis distinctio repellendus ipsa officiis eligendi, quia voluptatum et doloremque, quos itaque, dolorem libero. Repellendus explicabo exercitationem sequi ipsum, nisi sed cupiditate autem architecto odio? Nisi eligendi minima sed placeat eaque.</p>
+						</div>
+						<div class="col-md-4 about-container-in">
+							<img class="about-img img" src="{% static  'img/hands1.jpg' %}" alt="">
+							<p>Participate With Us</p>
+							<p class="showpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos veritatis distinctio repellendus ipsa officiis eligendi, quia voluptatum et doloremque, quos itaque, dolorem libero. Repellendus explicabo exercitationem sequi ipsum, nisi sed cupiditate autem architecto odio? Nisi eligendi minima sed placeat eaque.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 wisdom-container">
+					<h1>Latest Videos</h1>
+					<div class="row wisdom-in">
+						<div class="wisdom-inner wow delay-1 fadeInLeft">
+							<div class="wisdom-in-img-1-cont"><img class="wisdom-in-img-1" src="{% static  'img/know1.png' %}" alt=""></div>
+							<p>Knowing Christ and making Him known</p>
+							<small>Directored by <i><b>John Doe</b></i>,&nbsp;September 7th,2016</small>
+						</div>
+					</div>
+					<div class="row wisdom-in">
+						<div class="wisdom-inner wow delay-2 fadeInLeft">
+							<div class="wisdom-in-img-1-cont"><img class="wisdom-in-img-1" src="{% static  'img/know_21.png' %}" alt=""></div>
+							<p>Knowing Christ and making Him known</p>
+							<small>Directored by <i><b>John Doe</b></i>,&nbsp;September 7th,2016</small>
+						</div>
+					</div>
+					<div class="row wisdom-in" style="margin-top: 20px">
+						<div class="wisdom-inner wow delay-3 fadeInLeft">
+							<div class="wisdom-in-img-1-cont"><img class="wisdom-in-img-1" src="{% static  'img/mask.png' %}" alt=""></div>
+							<p>The life we live</p>
+							<small>Directored by <i><b>John Doe</b></i>,&nbsp;September 7th,2016</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 prez-container">
+					<div class="col-md-6 prez-p col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
+						<p class="wow bounceIn"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dignissimos officiis quasi eos enim tempora placeat dolor. Quam, velit, harum. Facilis libero distinctio, laudantium, vero ab placeat culpa fugit! Doloribus ratione minus, laudantium adipisci voluptatibus voluptate! Qui quis numquam voluptatum iste sed dolorem modi, dolorum beatae ullam facilis, nostrum placeat.<i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 blog-container first">
+					<div class="container content">
+						<h6>Latest</h6>
+						<h1>Blogs</h1>
+					</div>
+				</div>
+			{% for obj in object_list%}
+				<div class="col-sm-3 blog-container even even1 wow bounceIn" data-wow-delay="">
+					<small>{{ obj.timestamp|date:"F" }} {{obj.timestamp|date:"d"}}{%if obj.timestamp|date:"d" == "1" or obj.timestamp|date:"d" == "21" or obj.timestamp|date:"d" == "31"%}st{%elif obj.timestamp|date:"d" == "2" or obj.timestamp|date:"d" == "22"%}nd {%elif obj.timestamp|date:"d" == "3" or obj.timestamp|date:"d" == "23"%}rd {% else %}th {% endif %},{{ obj.timestamp|date:"Y" }}</small>
+					<h1>{{obj.title}}</h1>
+					<p>{{ obj.content|truncatechars:250 }}</p>
+				</div>
+			{% endfor %}
+			</div>
+			<div class="row">
+				<div class="col-md-12 frez-container">
+					<div class="col-md-6 prez-p col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
+						<p class="wow bounceIn"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dignissimos officiis quasi eos enim tempora placeat dolor. Quam, velit, harum. Facilis libero distinctio, laudantium, vero ab placeat culpa fugit! Doloribus ratione minus, laudantium adipisci voluptatibus voluptate! Qui quis numquam voluptatum iste sed dolorem modi, dolorum beatae ullam facilis, nostrum placeat.<i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+{#		<div class="toTop">#}
+{#			<i class="fa fa-chevron-up"></i>#}
+{#		</div>#}
+{% endblock %}

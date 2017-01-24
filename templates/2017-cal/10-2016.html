@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} RI |Blogs | {{ instance.title }}  {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/project.css' %}">{% endblock %}
+{% block blog_style1 %}{% endblock %}
+{% block header_name %}<h1>Up Coming Events</h1>{% endblock %}
+{% block middle %}
+<div class="row project">
+			<div class="col-md-10 col-md-offset-1 calendar-body">
+				<a href="/events/p" class="prev-month"><b>&lsaquo;</b></a> <a href="/events/" class="next-month"><b>&rsaquo;</b></a>
+				<div class="month-name">
+					<p>October 2016</p>
+				</div>
+				<div class="table-responsive">
+					<table>
+						<tr>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+							<th>Saturday</th>
+							<th>Sunday</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>1</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td class="event-day">7<p><b>Rehearsal</b></p></td>
+							<td>8</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+							<td>16</td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+							<td>22</td>
+							<td class="event-day">23<p><b>Rehearsal</b></p></td>
+						</tr>
+						<tr>
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+							<td class="event-day"><a href="/events/detail">29<p><b>Singles & Courting</b></p></a></td>
+							<td class="event-day"><a href="/events/detail">30<p><b>Night of Bliss</b></p></a></td>
+						</tr>
+						<tr>
+							<td>31</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+		</div>
+{% endblock %}

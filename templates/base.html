@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %} Reconcilers Int {% endblock %}</title>
+	<meta charset ="utf-8">
+	{% block meta %}<meta name="viewport" content="width=device-width">{% endblock %}
+	<link  href="{% static  'css/styles.css' %}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{% static  'css/home.css' %}">
+	<link rel="stylesheet" type="text/css"  href="{% static  'css/animate.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.1.0.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+	{% block blog_style %}{% endblock %}
+	{% block blog_style1 %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static  'fonts/font-awesome-4.4.0/css/font-awesome.css' %}">
+</head>
+<body>
+<div class="wrapper">
+	<div class="container-fluid">
+		<div class="row header-row">
+			<div class="col-md-12 header">
+				{% block header_banner %}
+					<div class="header-img">
+						{% block header_name %}<h1>Blogs</h1>{% endblock %}
+					</div>
+				{% endblock %}
+				<div class="navbar navbar-fixed-top nav-container">
+					<!--- logo -->
+							<div class="navbar-header">
+								<img src="{% static  'img/nav1.png' %}">
+								<a href="" class="navbar-brand brand">Reconcilers Int.</a>
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<!-- Menu Items -->
+							<div class="collapse navbar-collapse" id="mainNavBar">
+								<ul class="nav navbar-nav pull-right nav-ul">
+									<li><a href="/">Home</a></li>
+									<li><a href="/about">About</a> </li>
+									<li><a href="/events">Events</a></li>
+									<li><a href="/posts/">Blogs</a></li>
+									<li><a href="/gallery">Gallery</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+										<i class="fa fa-facebook" id="social"></i>
+										<i class="fa fa-twitter" id="social"></i>
+										<i class="fa fa-instagram" id="social"></i>
+										<i class="fa fa-youtube" id="social"></i>
+								</ul>
+							</div>
+                    </div>
+				</div>
+            </div>
+            {%block middle %}
+			{% endblock %}
+
+		<script type="text/javascript" src="{% static 'js/kull.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+		<script type="text/javascript" src= '{% static "engine1/wowslider.js" %}'></script>
+		<script type="text/javascript" src='{% static "engine1/script.js" %}'></script>
+		<script type="text/javascript" src='{% static "js/jquery.nicescroll.js" %}'></script>
+		<script>
+			new WOW().init();
+			$(window).scroll(function() {
+				var wscroll = $(document).scrollTop();
+				console.log(wscroll);
+				if (wscroll > 120) {
+					$('.nav-container ,.navbar-collapse').css('backgroundColor', 'white');
+					$('.nav-container').css('opacity', .9);
+					$('.brand ,.nav-ul>li>a ,.nav-ul>i').css('color', 'black');
+					$('.icon-bar').css('backgroundColor', 'black');
+				} else {
+					$('.nav-container,.navbar-collapse').css('backgroundColor', 'transparent');
+					$('.nav-container').css('opacity', 1);
+					$('.brand ,.nav-ul>li>a ,.nav-ul>i').css('color', 'white');
+					$('.icon-bar').css('color', 'white');
+				}
+
+			});
+				$(".comment-reply-btn").click(function(e){
+					e.preventDefault();
+					$(this).parent().next('.reply-comment').fadeToggle();
+				});
+
+				$(".share").click(function(){
+					$(".social-share").fadeToggle();
+				});
+
+		</script>
+		{% block javascript %}
+
+		{% endblock %}
+
+
+	</div>
+	<div class="footer-container">
+        <div class="footer">
+            <p>Developed by <a href="">WeavewebTech</a> </p>
+            <p>Copyright&copy; Reconcilers Int. 2017</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} RI |Blogs | {{ instance.title }}  {% endblock %}
+{% block blog_style %}<link rel="stylesheet"  href="{% static  'css/post_detail.css' %}">{% endblock %}
+{% block blog_style1 %}<link rel="stylesheet"  href="{% static  'css/login.css' %}">{% endblock %}
+{% block header_name %}<h1>Blog Detail</h1>{% endblock %}
+{%block middle %}
+	<div class="detail-container">
+		<div class="detail-header">
+			<div class="detail-date">
+				<p class="p-month">{{ instance.timestamp|date:"M" }}</p>
+				<p>{{ instance.timestamp|date:"d, Y" }}</p>
+			</div>
+			<div class="detail-img">
+				<img src="{{ instance.image.url }}" class="img-responsive">
+			</div>
+		</div>
+		<div class="detail-content">
+			<div class="detail-content-head">
+				<p class="detail-content-title">{{ instance.title }}</p>
+				<p class="detail-content-time">{{ instance.timestamp|timesince }}  ago</p>
+			</div>
+			<p class="detail-content-1">
+				{{ instance.content }}
+			</p>
+		</div>
+		<div class="detail-footer">
+			<p class="detail-footer-buttons">
+				<!-- <span>{{ like }}<span class="fa fa-thumbs-up"></span></span> -->
+				<span>{% if instance.comment_set.count > 0 %}{{ instance.comment_set.count }}{%endif%} Comment{% if instance.comment_set.count > 1 %}s{%endif%}</span>
+				<span class="like_count"> {{ voteCount }}</span> <span class="like"> Like</span>
+				<span class="fa fa-thumbs-up like_btn">{% csrf_token %}</span>
+				<span class="fa fa-share-alt share"></span>
+				<span class="social-share">
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"><i class="fa fa-facebook-square"></i></a>
+					<a href="https://twitter.com/home?status={{instance.content|urlencode}} {{ request.build_absolute_uri }}"><i class="fa fa-twitter-square"></i></a>
+					<a href="https://www.linkedin.com/shareArticle?mini=true&{{ request.build_absolute_uri }}&title={{instance.title}}&summary={{instance.content|urlencode}}&source={{ request.build_absolute_uri }}"><i class="fa fa-linkedin-square"></i></a>
+					<a href="https://plus.google.com/share?url={{ request.build_absolute_uri }}"><i class="fa fa-google-plus-square"></i></a>
+				</span>
+			</p>
+			<p class="detail-footer-author"><b>By: {{ instance.user }}</b></p>
+
+		</div>
+
+
+
+		{{share_string}}
+		<hr>
+		<div class="comment lead">
+			<p class="cl">Comments</p>
+{#			{% if form_valid == False  %}#}
+{#                <li class="errorlist">PLS LOGIN TO POST COMMENT</li>#}
+{#                <script type="text/javascript">#}
+{#                    $(document).scroll(function() {#}
+{#                            $(".submit-comment").attr("disabled", "disabled");#}
+{#                    });#}
+{#                </script>#}
+{#			{% else %}#}
+			    <p class="" style=" height: 70px"></p>
+{#			{% endif %}#}
+			{% for comment in instance.comment_set.all %}
+				<div class="comment-container">
+					<div class="comment-content">
+                    <div class="img-comment">
+                        <img src="{% static 'img/grinning.png'%}" alt=""/>
+					</div> 
+						<div>
+							<h4 class="user"><b>{{ comment.user.username }}</b></h4>
+							<a href="#" class="comment-reply-btn">{% if comment.children.count > 0%}{{comment.children.count}}{% endif %}&nbsp;</a>
+							<p class="time"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ comment.time|timesince }}</p>
+							<p class="c_content">{{comment.content}}</p>
+						</div>
+					</div>
+				</div>
+                <div class="url" style="display: none">{{ detail_url }}</div>
+                <div class="usr" style="display: none">{{current_user}}</div>
+			{% endfor %}
+		</div>
+		<div class="comment-form">
+                <p class="comment_name"><span class="login-notice">{% if current_user == 4 %}Please you are currently commenting as a guest you can <a href="{% url 'login' %}">Login here{% endif %}</a></span></p>
+			<form method="POST" action="." class=" form form-comment animated">
+			{% csrf_token %}
+                <input type="text" placeholder="Say Something" class="say">
+				{{ form.content.errors }}
+                {{ form.blog }}
+				<input class="submit-comment"  type="submit" value="Post Comment">
+			</form>
+		</div>
+        </div>
+    <script>
+    $(document).ready(function(){
+        $('.like_btn').on("click", function(){
+        $.ajax({
+            type:'POST',
+            url:'{{ detail_url }}',
+            data:{
+            id:'{{current_user}}',
+            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(data) {
+            $('.like_count').text(data.result);
+                console.log((data.result));
+            }
+        });
+    });
+    console.log('{{ detail_url }}')
+    })
+    </script>
+{% endblock %}
+	
